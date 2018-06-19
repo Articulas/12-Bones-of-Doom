@@ -131,7 +131,7 @@ def game_play ():
 
 ##    Create Enemy    
     enemy_l1 = ['Giant Spider','Giant Centipede','Giant Scorpian', 'Giant Rat', 'Jr. Troll']
-    enemy_species = 'Giant Rat'   #(random.choice(enemy_l1))    
+    enemy_species = (random.choice(enemy_l1))    
 
     if enemy_species == 'Giant Rat':
         enemy_health    = 30
@@ -140,17 +140,43 @@ def game_play ():
         enemy_wisdom    = 3
         enemy_charisma  = 2
         enemy_const     = 1
+
     if enemy_species == 'Giant Spider':
-        enemy_health = 10
-        enemy_armor =1
-        enemy_magic=1
-        enemy_wisdom =3
-        enemy_charisma = 1
-        enemy_const = 1
+        enemy_health    = 10
+        enemy_armor     = 1
+        enemy_magic     = 1
+        enemy_wisdom    = 3
+        enemy_charisma  = 1
+        enemy_const     = 1
+
+    if enemy_species == 'Jr. Troll':
+        enemy_health    = 40
+        enemy_armor     = 10
+        enemy_magic     = 1
+        enemy_wisdom    = 3
+        enemy_charisma  = 1
+        enemy_const     = 1
+
+    if enemy_species == 'Giant Centipede':
+        enemy_health    = 50
+        enemy_armor     = 15
+        enemy_magic     = 1
+        enemy_wisdom    = 3
+        enemy_charisma  = 1
+        enemy_const     = 1
+
+    if enemy_species == 'Giant Scorpian':
+        enemy_health    = 60
+        enemy_armor     = 30
+        enemy_magic     = 1
+        enemy_wisdom    = 3
+        enemy_charisma  = 1
+        enemy_const     = 1
     
-    
-    
-    
+##    End Enemy Creator
+
+
+
     gamePlaying = True
 
     while gamePlaying:
@@ -180,7 +206,7 @@ def game_play ():
 ##      Combat Report Screen
         pygame.draw.rect(gameDisplay, black, [25,375,765,200])
 ##      Event Theatre
-##        print_smtxt_data(species,100, 400)
+        print_smtxt_white(enemy_species,100, 400)
         gameDisplay.blit(giantrat,(415,150))
         print_smtxt_black('Giant Rat',600,165)
         print (enemy_health)
