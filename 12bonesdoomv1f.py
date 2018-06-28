@@ -130,11 +130,11 @@ def game_play ():
     if enemy_species == 'Giant Rat':
         enemy_health    = random.randrange(15, 30)
         enemy_strength  = random.randrange(4,10)
-        enemy_armor     = 2
-        enemy_magic     = 1
-        enemy_wisdom    = 3
-        enemy_charisma  = 2
-        enemy_const     = 1
+        enemy_armor     = random.randrange(1,5)
+        enemy_magic     = 0
+        enemy_wisdom    = random.randrange(1,3)
+        enemy_charisma  = random.randrange(1,2)
+        enemy_const     = random.randrange(2,7)
         enemy_pic = pygame.image.load('giantrat.png')
         
     if enemy_species == 'Giant Spider':
@@ -198,18 +198,23 @@ def game_play ():
 ##      Hero Pic
         pygame.draw.rect(gameDisplay, light_gray, [25, 150, 120, 200])
 ##      Hero Data Box
-        pygame.draw.rect(gameDisplay, light_gray, [155, 150, 240,200])
+        pygame.draw.rect(gameDisplay, yellow, [155, 150, 240,200])
 ##      Enemy Picture box
         pygame.draw.rect(gameDisplay, light_gray, [415, 150, 120,200])
 ##      Enemy Data Box
-        pygame.draw.rect(gameDisplay, light_gray, [545, 150, 240,200])
+        pygame.draw.rect(gameDisplay, yellow, [545, 150, 240,200])
 ##      Combat Report Screen
         pygame.draw.rect(gameDisplay, black, [25,375,765,200])
 ##      Enemy Data Display
         print_smtxt_black(enemy_species,630, 160)
         print_smtxt_black("Health: " + str(enemy_health), 590,200)
-        print_smtxt_black("Strength: " + str(enemy_strength),597,220)
+        print_smtxt_black("Strength: " + str(enemy_strength),598,220)
         print_smtxt_black("Armor: " + str(enemy_armor),583,240)
+        print_smtxt_black("Magic: " + str(enemy_magic),583,260)
+        print_smtxt_black("Wisdom: " + str(enemy_wisdom),583,280)
+        print_smtxt_black("Charisma: " + str(enemy_charisma),583,300)
+        print_smtxt_black("Const: " + str(enemy_const),583,320)
+
         gameDisplay.blit(enemy_pic,(415,150))
 ##        print (enemy_health)
         
@@ -223,6 +228,10 @@ game_intro()
 ##  End Game
 pygame.quit()
 quit()
+
+
+
+
 
 ################################################################
 ##enemy_l1 = ['Giant Spider','Giant Centipede','Giant Scorpian']
