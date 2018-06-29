@@ -181,7 +181,22 @@ def game_play ():
     
 ##    End Enemy Creator
 
+##      Hero Creator
+        
+    hero_type = 'Fighter'
+    hero_health= random.randrange(70,100)
+    hero_strength=random.randrange(15,50)
+    hero_armor=random.randrange(20,50)
+    hero_magic=random.randrange(1,7)
+    hero_wisdom=random.randrange(6,13)
+    hero_charisma=random.randrange(8,20)
+    hero_const=random.randrange(4,9)
     hero_pic = pygame.image.load('herom.png')
+
+##   End Hero Creator
+
+
+
     gamePlaying = True
 
     while gamePlaying:
@@ -219,6 +234,14 @@ def game_play ():
         print_smtxt_black("Const: " + str(enemy_const),586,300)
         gameDisplay.blit(enemy_pic,(415,150))
 ##      Hero data and display
+        print_smtxt_black(hero_type,200,160)
+        print_smtxt_black("Health: " + str(hero_health), 200,180)
+        print_smtxt_black("Strength: " + str(hero_strength),200,200)
+        print_smtxt_black("Armor: " + str(hero_armor),200,220)
+        print_smtxt_black("Magic: " + str(hero_magic),200,240)
+        print_smtxt_black("Wisdom: " + str(hero_wisdom),200,260)
+        print_smtxt_black("Charisma: " + str(hero_charisma),200,280)
+        print_smtxt_black("Const: " + str(hero_const),200,300)
         gameDisplay.blit(hero_pic, (25,150))
 
 ##        print (enemy_health)
